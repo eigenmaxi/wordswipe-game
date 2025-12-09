@@ -1,0 +1,163 @@
+/* Global styles for WordSwipe */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lexend', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+}
+
+.App {
+  width: 100%;
+  max-width: 600px;
+  min-height: 100vh;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.app-header {
+  background: linear-gradient(90deg, #4361ee, #3a0ca3);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.game-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.app-main {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-screen {
+  text-align: center;
+  padding: 1rem;
+}
+
+.menu-screen h2 {
+  color: #3a0ca3;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.menu-screen p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #4a4a4a;
+}
+
+.start-button {
+  background: linear-gradient(90deg, #4361ee, #3a0ca3);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+}
+
+.start-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(67, 97, 238, 0.4);
+}
+
+.instructions {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.instructions h3 {
+  color: #3a0ca3;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.instructions ul {
+  list-style-type: none;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.instructions li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.instructions li:before {
+  content: "✓";
+  color: #4361ee;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .App {
+    min-height: 100vh;
+    box-shadow: none;
+  }
+  
+  .app-header h1 {
+    font-size: 1.7rem;
+  }
+  
+  .game-stats {
+    font-size: 0.8rem;
+  }
+  
+  .app-main {
+    padding: 1rem;
+  }
+  
+  .menu-screen h2 {
+    font-size: 1.5rem;
+  }
+  
+  .menu-screen p {
+    font-size: 1rem;
+  }
+  
+  .start-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .instructions {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "version": "1",
+  "name": "WordSwipe",
+  "iconUrl": "https://wordswipe.example.com/src/assets/logo.svg",
+  "homeUrl": "https://wordswipe.example.com",
+  "splashImageUrl": "https://wordswipe.example.com/src/assets/splash.svg",
+  "splashBackgroundColor": "#4361ee",
+  "subtitle": "Swipe Letters to Form Words",
+  "description": "Swipe over letters to form words in this fun and challenging game. Test your vocabulary skills!",
+  "screenshotUrls": [
+    "https://wordswipe.example.com/src/assets/preview.svg",
+    "https://wordswipe.example.com/src/assets/preview.svg"
+  ],
+  "primaryCategory": "games",
+  "tags": ["word", "puzzle", "game", "fun", "challenge"],
+  "heroImageUrl": "https://wordswipe.example.com/src/assets/preview.svg",
+  "tagline": "Swipe, Connect, and Discover Words",
+  "ogTitle": "WordSwipe - Word Puzzle Game",
+  "ogDescription": "Test your vocabulary skills with WordSwipe, a fun word puzzle game.",
+  "ogImageUrl": "https://wordswipe.example.com/src/assets/preview.svg"
+}

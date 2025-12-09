@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/src/assets/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WordSwipe - Word Puzzle Game</title>
+    <!-- Farcaster Mini App Embed -->
+    <meta
+      name="fc:miniapp"
+      content='{"version":"1","imageUrl":"./src/assets/preview.svg","button":{"title":"Play WordSwipe","action":{"type":"launch_frame","name":"WordSwipe","url":".","splashImageUrl":"./src/assets/splash.svg","splashBackgroundColor":"#4361ee"}}}'
+    />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://wordswipe.example.com/" />
+    <meta property="og:title" content="WordSwipe - Word Puzzle Game" />
+    <meta
+      property="og:description"
+      content="Swipe letters to form words in this fun and challenging game. Test your vocabulary skills!"
+    />
+    <meta property="og:image" content="./src/assets/preview.svg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://wordswipe.example.com/" />
+    <meta property="twitter:title" content="WordSwipe - Word Puzzle Game" />
+    <meta
+      property="twitter:description"
+      content="Swipe letters to form words in this fun and challenging game. Test your vocabulary skills!"
+    />
+    <meta property="twitter:image" content="./src/assets/preview.svg" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Mini App SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@farcaster/miniapp-sdk@latest/dist/index.min.js"></script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+.game-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.progress-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: #e0e7ff;
+  padding: 1rem;
+  border-radius: 10px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.words-found {
+  color: #3a0ca3;
+}
+
+.current-word {
+  color: #4361ee;
+  font-weight: bold;
+}
+
+.letter-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.letter-cell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #4361ee, #3a0ca3);
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.letter-cell.selected {
+  background: linear-gradient(135deg, #f72585, #b5179e);
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.message {
+  min-height: 2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #3a0ca3;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.found-words-list {
+  width: 100%;
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.found-words-list h3 {
+  color: #3a0ca3;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.words-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.found-word {
+  background: #4361ee;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .progress-section {
+    gap: 0.3rem;
+  }
+  
+  .letter-grid {
+    max-width: 250px;
+  }
+  
+  .letter-cell {
+    font-size: 1.5rem;
+  }
+}
