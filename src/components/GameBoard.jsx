@@ -117,6 +117,11 @@ const GameBoard = ({
               }
             }
           }}
+          // Prevent default touch behaviors that cause scrolling/refreshing
+          onTouchEnd={(e) => {
+            e.preventDefault();
+            handleMouseUp();
+          }}
           data-index={i}
         >
           {letters[i]}
@@ -128,7 +133,12 @@ const GameBoard = ({
   };
 
   return (
-    <div className="game-board" ref={boardRef}>
+    <div 
+      className="game-board" 
+      ref={boardRef}
+      // Prevent default touch behaviors on the entire game board
+      onTouchMove={(e) => e.preventDefault()}
+    >
       <div className="progress-section">
         <div className="current-word">
           Current Word: {currentWord}
@@ -140,6 +150,8 @@ const GameBoard = ({
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
         onTouchEnd={handleMouseUp}
+        // Prevent default touch behaviors that cause scrolling/refreshing
+        onTouchStart={(e) => e.preventDefault()}
       >
         {renderLetters()}
       </div>
