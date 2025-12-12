@@ -90,6 +90,47 @@ const GameBoard = ({
     }
   }, [timeLeft]);
 
+  // Enhanced touch handlers to prevent scrolling on Farcaster
+  const handleTouchStart = (e, index) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    // Prevent scrolling on the entire document
+    document.body.style.overflow = 'hidden';
+    document.body.style.touchAction = 'none';
+    document.documentElement.style.overflow = 'hidden';
+    
+    handleMouseDown(index);
+  };
+
+  const handleTouchMove = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    if (!isSelecting) return;
+    
+    const touch = e.touches[0];
+    const element = document.elementFromPoint(touch.clientX, touch.clientY);
+    if (element && element.classList.contains('letter-cell')) {
+      const index = parseInt(element.dataset.index);
+      if (!isNaN(index)) {
+        handleMouseEnter(index);
+      }
+    }
+  };
+
+  const handleTouchEnd = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    // Re-enable scrolling
+    document.body.style.overflow = '';
+    document.body.style.touchAction = '';
+    document.documentElement.style.overflow = '';
+    
+    handleMouseUp();
+  };
+
   // Render letters in a 4x4 grid
   const renderLetters = () => {
     const grid = [];
@@ -102,26 +143,9 @@ const GameBoard = ({
           className={`letter-cell ${isSelected ? 'selected' : ''}`}
           onMouseDown={() => handleMouseDown(i)}
           onMouseEnter={() => handleMouseEnter(i)}
-          onTouchStart={(e) => {
-            e.preventDefault();
-            handleMouseDown(i);
-          }}
-          onTouchMove={(e) => {
-            e.preventDefault();
-            const touch = e.touches[0];
-            const element = document.elementFromPoint(touch.clientX, touch.clientY);
-            if (element && element.classList.contains('letter-cell')) {
-              const index = parseInt(element.dataset.index);
-              if (!isNaN(index)) {
-                handleMouseEnter(index);
-              }
-            }
-          }}
-          // Prevent default touch behaviors that cause scrolling/refreshing
-          onTouchEnd={(e) => {
-            e.preventDefault();
-            handleMouseUp();
-          }}
+          onTouchStart={(e) => handleTouchStart(e, i)}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
           data-index={i}
         >
           {letters[i]}
@@ -136,8 +160,24 @@ const GameBoard = ({
     <div 
       className="game-board" 
       ref={boardRef}
-      // Prevent default touch behaviors on the entire game board
-      onTouchMove={(e) => e.preventDefault()}
+      onTouchStart={(e) => {
+        // Prevent scrolling only when touching the game board
+        if (e.target.closest('.letter-grid') || e.target.closest('.letter-cell')) {
+          e.preventDefault();
+        }
+      }}
+      onTouchMove={(e) => {
+        // Prevent scrolling when interacting with the game board
+        if (e.target.closest('.letter-grid') || e.target.closest('.letter-cell')) {
+          e.preventDefault();
+        }
+      }}
+      onTouchEnd={(e) => {
+        // Prevent any default touch end behavior that might cause scrolling
+        if (e.target.closest('.letter-grid') || e.target.closest('.letter-cell')) {
+          e.preventDefault();
+        }
+      }}
     >
       <div className="progress-section">
         <div className="current-word">
@@ -149,9 +189,15 @@ const GameBoard = ({
         className="letter-grid"
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
-        onTouchEnd={handleMouseUp}
-        // Prevent default touch behaviors that cause scrolling/refreshing
-        onTouchStart={(e) => e.preventDefault()}
+        onTouchStart={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+        }}
+        onTouchMove={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+        }}
+        onTouchEnd={handleTouchEnd}
       >
         {renderLetters()}
       </div>
