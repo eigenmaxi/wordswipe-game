@@ -2,7 +2,7 @@
   "name": "WordSwipe",
   "icon": "/src/assets/logo.svg",
   "description": "Swipe letters to form words! Find as many words as you can in this fun word puzzle game.",
-  "url": "https://wordquest-gyumabymy-esclucives-projects.vercel.app",
+  "url": "https://wordquest-kxvhgtag9-esclucives-projects.vercel.app",
   "prompts": [
     {
       "title": "Play WordSwipe!",
@@ -12,7 +12,7 @@
   "frames": [
     {
       "label": "Play Game",
-      "url": "https://wordquest-gyumabymy-esclucives-projects.vercel.app"
+      "url": "https://wordquest-kxvhgtag9-esclucives-projects.vercel.app"
     }
   ]
 }
