@@ -11,7 +11,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  touch-action: none;
+  touch-action: manipulation;
 }
 
 body {
@@ -23,7 +23,6 @@ body {
   color: #333;
   /* Prevent pull-to-refresh and overscroll behavior */
   overscroll-behavior: none;
-  touch-action: none;
 }
 
 .App {
@@ -37,7 +36,6 @@ body {
   margin: 0 auto;
   /* Prevent pull-to-refresh */
   overscroll-behavior: none;
-  touch-action: none;
 }
 
 .app-header {

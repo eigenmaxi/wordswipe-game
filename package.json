@@ -6,9 +6,17 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "sh deploy.sh",
+    "deploy:netlify": "netlify deploy --prod"
   },
-  "keywords": ["word", "puzzle", "game", "farcaster", "miniapp"],
+  "keywords": [
+    "word",
+    "puzzle",
+    "game",
+    "farcaster",
+    "miniapp"
+  ],
   "author": "WordSwipe Team",
   "license": "MIT",
   "type": "module",
@@ -17,5 +25,8 @@
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "vite": "^7.2.6"
+  },
+  "devDependencies": {
+    "serve": "^14.2.5"
   }
 }

@@ -98,7 +98,6 @@ const GameBoard = ({
     // Prevent scrolling on the entire document
     document.body.style.overflow = 'hidden';
     document.body.style.touchAction = 'none';
-    document.documentElement.style.overflow = 'hidden';
     
     handleMouseDown(index);
   };
@@ -126,7 +125,6 @@ const GameBoard = ({
     // Re-enable scrolling
     document.body.style.overflow = '';
     document.body.style.touchAction = '';
-    document.documentElement.style.overflow = '';
     
     handleMouseUp();
   };
@@ -160,24 +158,9 @@ const GameBoard = ({
     <div 
       className="game-board" 
       ref={boardRef}
-      onTouchStart={(e) => {
-        // Prevent scrolling only when touching the game board
-        if (e.target.closest('.letter-grid') || e.target.closest('.letter-cell')) {
-          e.preventDefault();
-        }
-      }}
-      onTouchMove={(e) => {
-        // Prevent scrolling when interacting with the game board
-        if (e.target.closest('.letter-grid') || e.target.closest('.letter-cell')) {
-          e.preventDefault();
-        }
-      }}
-      onTouchEnd={(e) => {
-        // Prevent any default touch end behavior that might cause scrolling
-        if (e.target.closest('.letter-grid') || e.target.closest('.letter-cell')) {
-          e.preventDefault();
-        }
-      }}
+      onTouchStart={(e) => e.preventDefault()}
+      onTouchMove={(e) => e.preventDefault()}
+      onTouchEnd={(e) => e.preventDefault()}
     >
       <div className="progress-section">
         <div className="current-word">

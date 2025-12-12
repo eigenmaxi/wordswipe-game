@@ -12,7 +12,6 @@
   -ms-user-select: none;
   user-select: none;
   touch-action: none;
-  overscroll-behavior: none;
 }
 
 .progress-section {
@@ -49,7 +48,6 @@
   -ms-user-select: none;
   /* Prevent touch gestures on the grid */
   touch-action: none;
-  overscroll-behavior: none;
 }
 
 .letter-cell {
@@ -68,7 +66,6 @@
   /* Prevent default touch behaviors */
   touch-action: none;
   -webkit-touch-callout: none;
-  overscroll-behavior: none;
 }
 
 .letter-cell.selected {

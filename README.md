@@ -21,11 +21,13 @@ A fun and engaging word puzzle game built as a Farcaster Mini App using React an
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone <repository-url>
    ```
 
 2. Navigate to the project directory:
+
    ```bash
    cd wordquest
    ```
@@ -38,6 +40,7 @@ A fun and engaging word puzzle game built as a Farcaster Mini App using React an
 ### Development
 
 To start the development server:
+
 ```bash
 npm run dev
 ```
@@ -47,11 +50,38 @@ The app will be available at http://localhost:3000
 ### Building for Production
 
 To build the app for production:
+
 ```bash
 npm run build
 ```
 
 The built files will be in the `dist` directory.
+
+## Deployment
+
+### Netlify (Recommended)
+
+1. **Automatic Deployment**:
+
+   - Push your code to GitHub/GitLab/Bitbucket
+   - Connect your repository to Netlify
+   - Set build command to `npm run build`
+   - Set publish directory to `dist`
+
+2. **Manual Deployment**:
+
+   - Run `npm run build`
+   - Upload the `dist` folder to Netlify
+
+3. **CLI Deployment**:
+   - Install Netlify CLI: `npm install -g netlify-cli`
+   - Run `npm run deploy` or `netlify deploy --prod`
+
+### Vercel
+
+1. Connect your repository to Vercel
+2. Set build command to `npm run build`
+3. Set output directory to `dist`
 
 ## Farcaster Mini App Specifications
 
